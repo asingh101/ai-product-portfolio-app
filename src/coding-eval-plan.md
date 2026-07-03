@@ -84,7 +84,7 @@ Example: off-by-one error masks a type error downstream.
 **Three-way comparison:**
 - Claude Haiku 4.5 — fast/cheap tier
 - Claude Sonnet 4.6 — advanced tier  
-- GPT-4o — competitor baseline
+- GPT-4o — competitor baseline (planned but not integrated yet)
 
 **Model cascade (for live demo only):**
 Try Haiku first → if fails → escalate to Sonnet 4.6 → show which tier solved it.
