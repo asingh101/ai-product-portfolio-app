@@ -1,0 +1,115 @@
+/* Print styles for alignment reports and tech documentation.
+   Scoped with :has() so normal site pages are not blanked when printing. */
+
+@media print {
+  /* ── Report output (LinkedIn / Resume scan reports) ── */
+  body:has(.print-report-root) * {
+    visibility: hidden;
+  }
+
+  body:has(.print-report-root) .print-report-root,
+  body:has(.print-report-root) .print-report-root * {
+    visibility: visible;
+  }
+
+  body:has(.print-report-root) .print-report-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background: white !important;
+  }
+
+  body:has(.print-report-root) .print-report-root aside {
+    display: none !important;
+  }
+
+  body:has(.print-report-root) .print-report-root .flex-1 {
+    width: 100% !important;
+  }
+
+  .print-report-header {
+    display: block !important;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  #report-summary,
+  #report-basics,
+  #report-experience,
+  #report-skills,
+  #report-actions,
+  #report-keywords,
+  #report-ai_readiness {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .print-report-footer {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 10px;
+    color: #6b7280;
+  }
+
+  /* ── Tech documentation page ── */
+  body:has(.tech-docs-print) * {
+    visibility: hidden;
+  }
+
+  body:has(.tech-docs-print) .tech-docs-print,
+  body:has(.tech-docs-print) .tech-docs-print * {
+    visibility: visible;
+  }
+
+  body:has(.tech-docs-print) .tech-docs-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 32px 32px;
+    background: white !important;
+    color: #191c1e !important;
+  }
+
+  /* Hide site chrome */
+  body:has(.tech-docs-print) nav,
+  body:has(.tech-docs-print) footer,
+  body:has(.print-report-root) nav,
+  body:has(.print-report-root) footer {
+    display: none !important;
+  }
+
+  /* Hide non-content UI inside tech docs */
+  body:has(.tech-docs-print) .tech-docs-print .no-print,
+  body:has(.tech-docs-print) .tech-docs-print aside,
+  body:has(.tech-docs-print) .tech-docs-print button {
+    display: none !important;
+  }
+
+  body:has(.tech-docs-print) .tech-docs-print section,
+  body:has(.tech-docs-print) .tech-docs-print figure {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure SVG diagrams print */
+  body:has(.tech-docs-print) .tech-docs-print svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body:has(.tech-docs-print) .tech-docs-print table {
+    border-collapse: collapse;
+  }
+
+  body:has(.tech-docs-print) .tech-docs-print th,
+  body:has(.tech-docs-print) .tech-docs-print td {
+    border: 1px solid #e5e7eb;
+  }
+}

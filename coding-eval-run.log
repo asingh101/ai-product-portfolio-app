@@ -1,0 +1,64 @@
+Running 25 tasks × 2 models × 3 runs each
+Total API calls: 150
+
+  bug-01 / claude-haiku-4-5 ... ✓ (1237ms avg)
+  bug-01 / claude-sonnet-4-6 ... ✓ (3098ms avg)
+  bug-02 / claude-haiku-4-5 ... ✓ (1063ms avg)
+  bug-02 / claude-sonnet-4-6 ... ✓ (1712ms avg)
+  bug-03 / claude-haiku-4-5 ... ✗ (3290ms avg)
+  bug-03 / claude-sonnet-4-6 ... ✗ (6485ms avg)
+  bug-04 / claude-haiku-4-5 ... ✓ (998ms avg)
+  bug-04 / claude-sonnet-4-6 ... ✓ (1910ms avg)
+  bug-05 / claude-haiku-4-5 ... ✓ (1553ms avg)
+  bug-05 / claude-sonnet-4-6 ... ✗ (9330ms avg)
+  feat-01 / claude-haiku-4-5 ... ✓ (1256ms avg)
+  feat-01 / claude-sonnet-4-6 ... ✓ (2681ms avg)
+  feat-02 / claude-haiku-4-5 ... ✓ (987ms avg)
+  feat-02 / claude-sonnet-4-6 ... ✓ (1412ms avg)
+  feat-03 / claude-haiku-4-5 ... ✓ (1190ms avg)
+  feat-03 / claude-sonnet-4-6 ... ✓ (2084ms avg)
+  feat-04 / claude-haiku-4-5 ... ✓ (1200ms avg)
+  feat-04 / claude-sonnet-4-6 ... ✓ (2445ms avg)
+  feat-05 / claude-haiku-4-5 ... ✓ (1362ms avg)
+  feat-05 / claude-sonnet-4-6 ... ✓ (1907ms avg)
+  refactor-01 / claude-haiku-4-5 ... ✓ (1157ms avg)
+  refactor-01 / claude-sonnet-4-6 ... ✓ (2553ms avg)
+  refactor-02 / claude-haiku-4-5 ... ✓ (1169ms avg)
+  refactor-02 / claude-sonnet-4-6 ... ✓ (2214ms avg)
+  refactor-03 / claude-haiku-4-5 ... ✓ (1009ms avg)
+  refactor-03 / claude-sonnet-4-6 ... ✓ (1628ms avg)
+  refactor-04 / claude-haiku-4-5 ... ✓ (2034ms avg)
+  refactor-04 / claude-sonnet-4-6 ... ✓ (4217ms avg)
+  refactor-05 / claude-haiku-4-5 ... ✓ (1052ms avg)
+  refactor-05 / claude-sonnet-4-6 ... ✓ (1735ms avg)
+  ambig-01 / claude-haiku-4-5 ... ✗ (1268ms avg)
+  ambig-01 / claude-sonnet-4-6 ... ✗ (2570ms avg)
+  ambig-02 / claude-haiku-4-5 ... ✗ (729ms avg)
+  ambig-02 / claude-sonnet-4-6 ... ✗ (1932ms avg)
+  ambig-03 / claude-haiku-4-5 ... ✗ (1383ms avg)
+  ambig-03 / claude-sonnet-4-6 ... ✗ (3228ms avg)
+  ambig-04 / claude-haiku-4-5 ... ✗ (590ms avg)
+  ambig-04 / claude-sonnet-4-6 ... ✗ (1525ms avg)
+  ambig-05 / claude-haiku-4-5 ... ✗ (1587ms avg)
+  ambig-05 / claude-sonnet-4-6 ... ✗ (4837ms avg)
+  multi-01 / claude-haiku-4-5 ... ✓ (817ms avg)
+  multi-01 / claude-sonnet-4-6 ... ✓ (1162ms avg)
+  multi-02 / claude-haiku-4-5 ... ✓ (1178ms avg)
+  multi-02 / claude-sonnet-4-6 ... ✓ (1652ms avg)
+  multi-03 / claude-haiku-4-5 ... ✓ (907ms avg)
+  multi-03 / claude-sonnet-4-6 ... ✓ (1574ms avg)
+  multi-04 / claude-haiku-4-5 ... ✓ (1631ms avg)
+  multi-04 / claude-sonnet-4-6 ... ✓ (1769ms avg)
+  multi-05 / claude-haiku-4-5 ... ✓ (1011ms avg)
+  multi-05 / claude-sonnet-4-6 ... /Users/anki/Desktop/Website/portfolio-app/src/scripts/run_coding_eval.py:892: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "runAt": datetime.utcnow().isoformat(),
+/Users/anki/Desktop/Website/portfolio-app/src/scripts/run_coding_eval.py:893: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "runAtLabel": datetime.utcnow().strftime("%B %d, %Y"),
+✓ (1552ms avg)
+
+── Results ──────────────────────────────────────────────
+  claude-haiku-4-5: 19/25 (76%)
+  claude-sonnet-4-6: 18/25 (72%)
+
+Saved to results.json
+Next: paste results.json content into src/lib/coding-eval/publicSnapshot.ts

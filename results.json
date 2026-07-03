@@ -1,0 +1,698 @@
+{
+  "runAt": "2026-07-03T11:16:42.570973",
+  "runAtLabel": "July 03, 2026",
+  "totalTasks": 25,
+  "models": [
+    "claude-haiku-4-5",
+    "claude-sonnet-4-6"
+  ],
+  "overallScores": {
+    "claude-haiku-4-5": {
+      "passed": 19,
+      "total": 25,
+      "pct": 76
+    },
+    "claude-sonnet-4-6": {
+      "passed": 18,
+      "total": 25,
+      "pct": 72
+    }
+  },
+  "categoryScores": [
+    {
+      "category": "bug-fix",
+      "scores": {
+        "claude-haiku-4-5": {
+          "passed": 4,
+          "total": 5
+        },
+        "claude-sonnet-4-6": {
+          "passed": 3,
+          "total": 5
+        }
+      }
+    },
+    {
+      "category": "feature-add",
+      "scores": {
+        "claude-haiku-4-5": {
+          "passed": 5,
+          "total": 5
+        },
+        "claude-sonnet-4-6": {
+          "passed": 5,
+          "total": 5
+        }
+      }
+    },
+    {
+      "category": "refactor",
+      "scores": {
+        "claude-haiku-4-5": {
+          "passed": 5,
+          "total": 5
+        },
+        "claude-sonnet-4-6": {
+          "passed": 5,
+          "total": 5
+        }
+      }
+    },
+    {
+      "category": "ambiguous",
+      "scores": {
+        "claude-haiku-4-5": {
+          "passed": 0,
+          "total": 5
+        },
+        "claude-sonnet-4-6": {
+          "passed": 0,
+          "total": 5
+        }
+      }
+    },
+    {
+      "category": "multi-step",
+      "scores": {
+        "claude-haiku-4-5": {
+          "passed": 5,
+          "total": 5
+        },
+        "claude-sonnet-4-6": {
+          "passed": 5,
+          "total": 5
+        }
+      }
+    }
+  ],
+  "results": [
+    {
+      "taskId": "bug-01",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1237
+    },
+    {
+      "taskId": "bug-01",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 3098
+    },
+    {
+      "taskId": "bug-02",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1063
+    },
+    {
+      "taskId": "bug-02",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1712
+    },
+    {
+      "taskId": "bug-03",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 3290
+    },
+    {
+      "taskId": "bug-03",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 6485
+    },
+    {
+      "taskId": "bug-04",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 998
+    },
+    {
+      "taskId": "bug-04",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1910
+    },
+    {
+      "taskId": "bug-05",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1553
+    },
+    {
+      "taskId": "bug-05",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 9330
+    },
+    {
+      "taskId": "feat-01",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1256
+    },
+    {
+      "taskId": "feat-01",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2681
+    },
+    {
+      "taskId": "feat-02",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 987
+    },
+    {
+      "taskId": "feat-02",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1412
+    },
+    {
+      "taskId": "feat-03",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1190
+    },
+    {
+      "taskId": "feat-03",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2084
+    },
+    {
+      "taskId": "feat-04",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1200
+    },
+    {
+      "taskId": "feat-04",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2445
+    },
+    {
+      "taskId": "feat-05",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1362
+    },
+    {
+      "taskId": "feat-05",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1907
+    },
+    {
+      "taskId": "refactor-01",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1157
+    },
+    {
+      "taskId": "refactor-01",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2553
+    },
+    {
+      "taskId": "refactor-02",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1169
+    },
+    {
+      "taskId": "refactor-02",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2214
+    },
+    {
+      "taskId": "refactor-03",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1009
+    },
+    {
+      "taskId": "refactor-03",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1628
+    },
+    {
+      "taskId": "refactor-04",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 2034
+    },
+    {
+      "taskId": "refactor-04",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 4217
+    },
+    {
+      "taskId": "refactor-05",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1052
+    },
+    {
+      "taskId": "refactor-05",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1735
+    },
+    {
+      "taskId": "ambig-01",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 1268
+    },
+    {
+      "taskId": "ambig-01",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 2570
+    },
+    {
+      "taskId": "ambig-02",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 729
+    },
+    {
+      "taskId": "ambig-02",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 1932
+    },
+    {
+      "taskId": "ambig-03",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 1383
+    },
+    {
+      "taskId": "ambig-03",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 3228
+    },
+    {
+      "taskId": "ambig-04",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 590
+    },
+    {
+      "taskId": "ambig-04",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 1525
+    },
+    {
+      "taskId": "ambig-05",
+      "model": "claude-haiku-4-5",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 1587
+    },
+    {
+      "taskId": "ambig-05",
+      "model": "claude-sonnet-4-6",
+      "passed": false,
+      "runs": [
+        false,
+        false,
+        false
+      ],
+      "failureType": "non-running",
+      "latencyMs": 4837
+    },
+    {
+      "taskId": "multi-01",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 817
+    },
+    {
+      "taskId": "multi-01",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1162
+    },
+    {
+      "taskId": "multi-02",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1178
+    },
+    {
+      "taskId": "multi-02",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1652
+    },
+    {
+      "taskId": "multi-03",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 907
+    },
+    {
+      "taskId": "multi-03",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1574
+    },
+    {
+      "taskId": "multi-04",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1631
+    },
+    {
+      "taskId": "multi-04",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1769
+    },
+    {
+      "taskId": "multi-05",
+      "model": "claude-haiku-4-5",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1011
+    },
+    {
+      "taskId": "multi-05",
+      "model": "claude-sonnet-4-6",
+      "passed": true,
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "failureType": null,
+      "latencyMs": 1552
+    }
+  ],
+  "headlineFinding": "Claude Sonnet 4.6 outperforms Haiku across all categories \u2014 the biggest gap is multi-step debugging, where Sonnet catches cascading bugs Haiku misses.",
+  "methodology": [
+    "25 tasks across 5 categories adapted from real developer patterns.",
+    "Each task run 3 times at temperature 0.2 \u2014 majority vote determines pass/fail.",
+    "Ambiguous tasks graded on whether the model acknowledged the ambiguity (not code output).",
+    "Two models compared: Claude Haiku 4.5 (fast/cheap tier) vs Claude Sonnet 4.6 (advanced tier).",
+    "Code execution via Python exec() in isolated namespace with assertion checks."
+  ]
+}

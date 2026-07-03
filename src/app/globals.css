@@ -1,0 +1,547 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   THE PRISTINE STRATEGIST — Design System Tokens
+   ============================================================================ */
+
+@theme inline {
+  /* --- Primary Palette --- */
+  --color-primary: #3525cd;
+  --color-primary-container: #4f46e5;
+  --color-primary-fixed: #e2dfff;
+  --color-primary-fixed-dim: #c3c0ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #0f0069;
+  --color-on-primary-fixed-variant: #3323cc;
+  --color-on-primary-container: #dad7ff;
+  --color-inverse-primary: #c3c0ff;
+  --color-surface-tint: #4d44e3;
+
+  /* --- Secondary Palette --- */
+  --color-secondary: #58579b;
+  --color-secondary-container: #b6b4ff;
+  --color-secondary-fixed: #e2dfff;
+  --color-secondary-fixed-dim: #c3c0ff;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-fixed: #140f54;
+  --color-on-secondary-fixed-variant: #413f82;
+  --color-on-secondary-container: #454386;
+
+  /* --- Tertiary Palette --- */
+  --color-tertiary: #7e3000;
+  --color-tertiary-container: #a44100;
+  --color-tertiary-fixed: #ffdbcc;
+  --color-tertiary-fixed-dim: #ffb695;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffd2be;
+  --color-on-tertiary-fixed: #351000;
+  --color-on-tertiary-fixed-variant: #7b2f00;
+
+  /* --- Surface / Tonal Architecture (The "No-Line" System) --- */
+  --color-surface: #f7f9fb;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-variant: #e0e3e5;
+
+  /* --- On-surface / Text --- */
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #464555;
+  --color-on-background: #191c1e;
+  --color-background: #f7f9fb;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+
+  /* --- Outline --- */
+  --color-outline: #777587;
+  --color-outline-variant: #c7c4d8;
+
+  /* --- Error --- */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* --- Typography --- */
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+/* ============================================================================
+   Base Styles
+   ============================================================================ */
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
+
+/* ============================================================================
+   Typography Utility Classes
+   ============================================================================ */
+
+.text-display-lg {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-display-md {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 2.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-lg {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-headline-md {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.text-headline-sm {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.text-body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-body-md {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.text-label-lg {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.text-label-md {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* CMS markdown inline size spans (toolbar S / M / L / XL / 2XL) */
+.cms-size-sm {
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.cms-size-base {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cms-size-lg {
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 48rem) {
+  .cms-size-lg {
+    font-size: 1.25rem;
+    line-height: 1.55;
+  }
+}
+
+.cms-size-xl {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 48rem) {
+  .cms-size-xl {
+    font-size: 1.5rem;
+    line-height: 1.45;
+  }
+}
+
+.cms-size-2xl {
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 48rem) {
+  .cms-size-2xl {
+    font-size: 1.875rem;
+    line-height: 1.3;
+  }
+}
+
+/* ============================================================================
+   Signature Utilities (Glassmorphism, Gradients, Shadows)
+   ============================================================================ */
+
+/* Glassmorphism nav bar */
+.glass-header {
+  background: rgba(247, 249, 251, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Primary CTA gradient */
+.cta-gradient {
+  background: linear-gradient(135deg, #3525cd 0%, #4f46e5 100%);
+}
+
+/* Text gradient (hero highlight) */
+.text-gradient {
+  background: linear-gradient(135deg, #3525cd 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient shadow — floating elements only (menus, modals) */
+.shadow-ambient {
+  box-shadow: 0 8px 48px rgba(25, 28, 30, 0.04);
+}
+
+/* Ghost border — accessibility fallback only */
+.ghost-border {
+  border: 1px solid rgba(199, 196, 216, 0.15);
+}
+
+/* ============================================================================
+   Smooth Transitions
+   ============================================================================ */
+
+.transition-default {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================================
+   Competency Matrix — orbital animation (per-circle, staggered on shared path)
+   ============================================================================ */
+
+@keyframes competency-slot-orbit {
+  from {
+    transform: rotate(var(--orbit-angle)) translateY(calc(-1 * var(--orbit-radius)));
+  }
+  to {
+    transform: rotate(calc(var(--orbit-angle) + 360deg))
+      translateY(calc(-1 * var(--orbit-radius)));
+  }
+}
+
+@keyframes competency-slot-counter-orbit {
+  from {
+    transform: rotate(var(--orbit-angle-neg));
+  }
+  to {
+    transform: rotate(calc(var(--orbit-angle-neg) - 360deg));
+  }
+}
+
+.competency-matrix-orbit {
+  container-type: size;
+  --orbit-duration: 85s;
+  --venn-size: min(44vw, 220px);
+  --circle-half: calc(var(--venn-size) / 2);
+  --orbit-radius: max(
+    5.5rem,
+    min(
+      calc(50cqh - var(--circle-half) - 0.75rem),
+      calc(50cqw - var(--circle-half) - 0.75rem)
+    )
+  );
+}
+
+@media (min-width: 640px) {
+  .competency-matrix-orbit {
+    --venn-size: 260px;
+  }
+}
+
+@media (min-width: 768px) {
+  .competency-matrix-orbit {
+    --venn-size: 288px;
+  }
+}
+
+.competency-orbit-ring {
+  z-index: 20;
+}
+
+.competency-orbit-slot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  animation: competency-slot-orbit var(--orbit-duration) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+.competency-orbit-slot:hover {
+  z-index: 30;
+}
+
+.competency-matrix-orbit:has(.competency-orbit-slot:hover) .competency-orbit-slot,
+.competency-matrix-orbit:has(.competency-orbit-slot:hover) .competency-orbit-counter {
+  animation-play-state: paused;
+}
+
+.competency-orbit-counter {
+  animation: competency-slot-counter-orbit var(--orbit-duration) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+.competency-venn-circle {
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease;
+}
+
+.competency-orbit-slot:hover .competency-venn-circle {
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.competency-orbit-path {
+  z-index: 5;
+  width: calc(2 * var(--orbit-radius));
+  height: calc(2 * var(--orbit-radius));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .competency-orbit-slot,
+  .competency-orbit-counter {
+    animation: none !important;
+  }
+
+  .competency-orbit-slot {
+    transform: rotate(var(--orbit-rest-angle)) translateY(calc(-1 * var(--orbit-radius)));
+  }
+
+  .competency-orbit-counter {
+    transform: rotate(var(--orbit-rest-angle-neg));
+  }
+}
+
+/* ============================================================================
+   Scrollbar Styling
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* ============================================================================
+   Blog typography (no italics, editorial readability)
+   ============================================================================ */
+
+.prose-custom {
+  color: color-mix(in srgb, var(--color-on-surface) 88%, transparent);
+  font-size: 1.125rem;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 48rem) {
+  .prose-custom {
+    font-size: 1.25rem;
+    line-height: 1.95;
+  }
+}
+
+.prose-custom :where(p) {
+  margin: 1.05rem 0;
+}
+
+.prose-custom :where(h2) {
+  margin-top: 2.2rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-size: 1.65rem;
+  color: var(--color-on-surface);
+  background: linear-gradient(135deg, var(--color-on-surface) 0%, color-mix(in srgb, var(--color-primary) 65%, var(--color-on-surface)) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 48rem) {
+  .prose-custom :where(h2) {
+    font-size: 2rem;
+  }
+}
+
+.prose-custom :where(h3) {
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  font-size: 1.35rem;
+  color: color-mix(in srgb, var(--color-on-surface) 94%, var(--color-primary));
+}
+
+.prose-custom :where(hr) {
+  margin: 2rem 0;
+  border: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-outline-variant) 45%, transparent);
+}
+
+.prose-custom :where(ul, ol) {
+  margin: 1rem 0;
+  padding-left: 1.4rem;
+}
+
+.prose-custom :where(li) {
+  margin: 0.35rem 0;
+}
+
+.prose-custom :where(a) {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.prose-custom :where(a:hover) {
+  opacity: 0.9;
+}
+
+.prose-custom :where(strong) {
+  color: var(--color-on-surface);
+  font-weight: 800;
+}
+
+.prose-custom :where(blockquote) {
+  margin: 1.5rem 0;
+}
+
+.prose-custom :where(code) {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--color-on-primary-fixed);
+  background: var(--color-primary-fixed);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+}
+
+.prose-custom :where(pre) {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--color-surface-container);
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant) 25%, transparent);
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.prose-custom :where(pre code) {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+/* Hub hero slideshow — CSS animations for reliable Safari playback */
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1) translate3d(-2%, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(2%, 0, 0);
+  }
+}
+
+@keyframes hero-ken-burns-reverse {
+  from {
+    transform: scale(1) translate3d(2%, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-2%, 0, 0);
+  }
+}
+
+.animate-hero-ken-burns {
+  animation: hero-ken-burns 7s linear forwards;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.animate-hero-ken-burns-reverse {
+  animation: hero-ken-burns-reverse 7s linear forwards;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-ken-burns,
+  .animate-hero-ken-burns-reverse {
+    animation: none;
+  }
+}

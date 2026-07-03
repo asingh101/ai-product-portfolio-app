@@ -1,0 +1,117 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "hosting": {
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "trailingSlash": true,
+    "redirects": [
+      {
+        "source": "/ai-prototypes/job-search-agent",
+        "destination": "/ai-prototypes/job-application-workflow-agent/",
+        "type": 301
+      },
+      {
+        "source": "/ai-prototypes/job-search-agent/**",
+        "destination": "/ai-prototypes/job-application-workflow-agent/",
+        "type": 301
+      },
+      {
+        "source": "/admin/job-search-agent/evals",
+        "destination": "/admin/job-application-workflow-agent/evals/",
+        "type": 301
+      },
+      {
+        "source": "/admin/job-search-agent/evals/**",
+        "destination": "/admin/job-application-workflow-agent/evals/",
+        "type": 301
+      },
+      {
+        "source": "/admin/job-search-agent",
+        "destination": "/admin/job-application-workflow-agent/",
+        "type": 301
+      },
+      {
+        "source": "/admin/job-search-agent/**",
+        "destination": "/admin/job-application-workflow-agent/",
+        "type": 301
+      },
+      {
+        "source": "/portfolio/bountifoods-brand-audit",
+        "destination": "/portfolio/brand-strategy-and-brand-audit-analysis/",
+        "type": 301
+      },
+      {
+        "source": "/portfolio/bountifoods-brand-audit/**",
+        "destination": "/portfolio/brand-strategy-and-brand-audit-analysis/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/portfolio/*",
+        "destination": "/portfolio/_/index.html"
+      },
+      {
+        "source": "/portfolio/*/",
+        "destination": "/portfolio/_/index.html"
+      },
+      {
+        "source": "/events/*",
+        "destination": "/events/_/index.html"
+      },
+      {
+        "source": "/events/*/",
+        "destination": "/events/_/index.html"
+      },
+      {
+        "source": "/blog/*",
+        "destination": "/blog/_/index.html"
+      },
+      {
+        "source": "/blog/*/",
+        "destination": "/blog/_/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css|svg|png|jpg|webp|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22"
+    }
+  ]
+}

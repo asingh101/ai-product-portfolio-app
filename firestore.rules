@@ -1,0 +1,130 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Site content (home, about, resume, etc.)
+    match /site_content/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // Projects collection
+    match /projects/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // Events collection
+    match /events/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // Blog posts collection
+    match /blog_posts/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // RAG context collection
+    match /rag_context/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // RoleAlign backend CMS (prompts, limits, models)
+    match /role_align_config/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // Resume Optimizer backend CMS
+    match /resume_optimizer_config/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+    }
+
+    // Tool usage analytics (written by Cloud Functions only)
+    match /tool_usage_daily/{document=**} {
+      allow read: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+      allow write: if false;
+    }
+
+    // Public site-wide session counter (increment-only from visitors)
+    match /site_stats/public {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['totalUsers'])
+        && (request.resource.data.totalUsers == 105 || request.resource.data.totalUsers == 1);
+      allow update: if request.resource.data.keys().hasOnly(['totalUsers'])
+        && resource.data.totalUsers is int
+        && (
+          request.resource.data.totalUsers == resource.data.totalUsers + 1
+          || (request.resource.data.totalUsers == 105 && resource.data.totalUsers < 105)
+        );
+      allow delete: if false;
+    }
+
+    // Anonymous report download leads (PDF gate on portfolio case studies)
+    match /report_download_leads/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['email', 'projectSlug', 'projectId', 'reportUrl', 'createdAt'])
+        && request.resource.data.email is string
+        && request.resource.data.email.size() >= 5
+        && request.resource.data.email.size() <= 254
+        && request.resource.data.projectSlug is string
+        && request.resource.data.projectSlug.size() >= 1
+        && request.resource.data.projectSlug.size() <= 200
+        && request.resource.data.projectId is string
+        && request.resource.data.projectId.size() >= 1
+        && request.resource.data.projectId.size() <= 128
+        && request.resource.data.reportUrl is string
+        && request.resource.data.reportUrl.size() <= 2048;
+      allow read, update, delete: if false;
+    }
+
+    // Public feedback submissions from the contact page
+    match /site_feedback/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['rating', 'email', 'questions', 'answers', 'page', 'createdAt'])
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5
+        && (request.resource.data.email == null
+          || (request.resource.data.email is string
+            && request.resource.data.email.size() <= 254))
+        && request.resource.data.questions is list
+        && request.resource.data.questions.size() <= 10
+        && request.resource.data.answers is list
+        && request.resource.data.answers.size() <= 10
+        && request.resource.data.page is string
+        && request.resource.data.page.size() >= 1
+        && request.resource.data.page.size() <= 100;
+      allow read: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+      allow update, delete: if false;
+    }
+
+    // Hire Me inquiries from the homepage
+    match /hire_inquiries/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['message', 'name', 'email', 'phone', 'page', 'createdAt'])
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 1
+        && request.resource.data.message.size() <= 5000
+        && (request.resource.data.name == null
+          || (request.resource.data.name is string
+            && request.resource.data.name.size() <= 120))
+        && (request.resource.data.email == null
+          || (request.resource.data.email is string
+            && request.resource.data.email.size() <= 254))
+        && (request.resource.data.phone == null
+          || (request.resource.data.phone is string
+            && request.resource.data.phone.size() <= 30))
+        && request.resource.data.page is string
+        && request.resource.data.page.size() >= 1
+        && request.resource.data.page.size() <= 100;
+      allow read: if request.auth != null && request.auth.token.email == "ankit.singh101@gmail.com";
+      allow update, delete: if false;
+    }
+
+    // Default deny for everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
