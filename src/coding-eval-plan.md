@@ -1,6 +1,6 @@
 # Coding Eval — Complete Plan
 **Last updated:** July 3, 2026  
-**Purpose:** Anthropic Claude Code PM interview portfolio piece  
+**Purpose:**  PM interview portfolio piece  
 **Status:** Planning complete. Ready to build.
 
 ---
