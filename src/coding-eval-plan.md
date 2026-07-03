@@ -25,7 +25,7 @@ A 25-task coding benchmark that tests how Claude Sonnet 4.6, Claude Haiku 4.5, a
 
 ---
 
-## 2. Why This Exists (The Pitch)
+## 2. Why This Exists 
 
 Existing benchmarks have three blind spots:
 1. They test single-shot answers. Real Claude Code usage is iterative.
