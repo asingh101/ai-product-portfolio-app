@@ -204,7 +204,7 @@ Short bullets: task source (real GitHub issues), grading approach, reproducibili
 Link to GitHub repo.
 
 **Section 6 — What I'd Build Next (v2)**
-3-4 sentences. Shows PM thinking. Mentions: multi-language tasks, agentic loop testing, system prompt experiments for ambiguity improvement.
+Multi-language tasks, agentic loop testing, system prompt experiments for ambiguity improvement.
 
 ---
 
@@ -226,9 +226,8 @@ Runs offline on Ankit's local machine. Never deployed.
 **APIs used:**
 - Anthropic Python SDK (`pip install anthropic`) — for Haiku + Sonnet
 - OpenAI Python SDK (`pip install openai`) — for GPT-4o
-- Keys stored in local `.env` file, never committed
 
-**Estimated cost per full run:** $2–5 depending on task length.
+**Estimated cost per full run:** $5–20 depending on task length.
 
 ---
 
@@ -250,20 +249,20 @@ Runs offline on Ankit's local machine. Never deployed.
 | Session | Goal | Key files produced |
 |---|---|---|
 | Session 1 (done) | Full planning | `coding-eval-plan.md` |
-| Session 2 | Write 25 task definitions | `lib/coding-eval/tasks.ts` + `/tasks/` folder structure |
-| Session 3 | Build types + public snapshot skeleton | `lib/coding-eval/types.ts`, `lib/coding-eval/publicSnapshot.ts` |
-| Session 4 | Build showcase component | `components/coding-eval/CodingEvalShowcase.tsx` |
-| Session 5 | Build page + wire everything | `app/ai-prototypes/coding-eval/page.tsx` |
-| Session 6 | Write Python harness | `scripts/run_coding_eval.py` |
-| Session 7 | Run harness, fill snapshot, deploy | Update `publicSnapshot.ts`, deploy to Firebase |
+| Session 2 (done)| Write 25 task definitions | `lib/coding-eval/tasks.ts` + `/tasks/` folder structure |
+| Session 3 (done)| Build types + public snapshot skeleton | `lib/coding-eval/types.ts`, `lib/coding-eval/publicSnapshot.ts` |
+| Session 4 (done)| Build showcase component | `components/coding-eval/CodingEvalShowcase.tsx` |
+| Session 5 (done) | Build page + wire everything | `app/ai-prototypes/coding-eval/page.tsx` |
+| Session 6 (done)| Write Python harness | `scripts/run_coding_eval.py` |
+| Session 7 (done)| Run harness, fill snapshot, deploy | Update `publicSnapshot.ts`, deploy to Firebase |
 
 **Start each session with:** "Read `src/coding-eval-plan.md` and continue from Session X."
 
 ---
 
-## 12. What This Proves to Anthropic
+## 12. What This Proves/ Profile Highlights!
 
-The eval demonstrates in miniature exactly what the Claude Code PM role requires:
+The eval demonstrates in miniature exactly what the AI PM role in current landscape requires:
 
 - **Problem identification** — articulating what's missing in HumanEval/SWE-bench/LiveCodeBench
 - **Eval taste** — choosing task categories that test behaviors that actually matter
