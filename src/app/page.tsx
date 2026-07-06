@@ -359,6 +359,22 @@ export default function HubPage() {
               <span className="material-symbols-outlined text-sm">mail</span>
               Hire Me?
             </button>
+            <Link
+              href="/ai-prototypes"
+              className="inline-flex items-center gap-2 bg-surface-container-high text-on-surface px-5 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-highest transition-colors"
+            >
+              <span className="material-symbols-outlined text-sm">analytics</span>
+              AI Prototypes
+            </Link>
+            <a
+              href="https://github.com/asingh101/ai-product-portfolio-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-surface-container-high text-on-surface px-5 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-highest transition-colors"
+            >
+              <span className="material-symbols-outlined text-sm">code</span>
+              GitHub
+            </a>
           </div>
           </div>
         </article>

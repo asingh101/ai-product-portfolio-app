@@ -12,6 +12,7 @@
     "@google/generative-ai": "^0.24.1",
     "date-fns": "^4.1.0",
     "firebase": "^12.11.0",
+    "firebase-admin": "^14.1.0",
     "framer-motion": "^12.38.0",
     "googleapis": "^171.4.0",
     "hast-util-sanitize": "^5.0.2",

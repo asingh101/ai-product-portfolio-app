@@ -28,16 +28,14 @@ export default function CodingEvalPage() {
           </span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[1.1] font-[family-name:var(--font-headline)] mb-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] font-[family-name:var(--font-headline)] mb-6">
           Claude Code{" "}
           <span className="text-gradient">Coding Eval</span>
         </h1>
 
-        <p className="text-xl text-on-surface-variant leading-relaxed mb-6">
-          I built a 25-task benchmark to test how Claude models handle real developer work:
-          fixing bugs, adding features, refactoring code, following vague instructions, and
-          tracing multi-step errors. Most coding benchmarks test whether a model can solve
-          puzzles. This one tests whether it behaves like a thoughtful developer.
+        <p className="text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-6 max-w-3xl">
+          A 25-task benchmark testing how Claude models handle real developer work: fixing bugs,
+          adding features, refactoring, and following vague instructions.
         </p>
 
         {/* Quick stat */}
@@ -67,8 +65,8 @@ export default function CodingEvalPage() {
               key={c.title}
               className="rounded-xl border border-outline-variant/15 bg-surface-container-low/50 px-6 py-6"
             >
-              <p className="text-base font-bold text-on-surface mb-2">{c.title}</p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">{c.body}</p>
+              <p className="text-lg font-bold text-on-surface mb-2">{c.title}</p>
+              <p className="text-base text-on-surface-variant leading-relaxed">{c.body}</p>
             </div>
           ))}
         </div>
@@ -84,7 +82,7 @@ export default function CodingEvalPage() {
 const WHY_CARDS = [
   {
     title: "HumanEval is saturated",
-    body: "Models score 90%+ — it can't discriminate between frontier models anymore. Also likely contaminated.",
+    body: "Models score 90%+ - it can't discriminate between frontier models anymore. Also likely contaminated.",
   },
   {
     title: "SWE-bench is complex",

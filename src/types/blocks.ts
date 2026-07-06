@@ -50,6 +50,35 @@ export interface DocsBlock {
   };
 }
 
+export interface ChartBlock {
+  type: "chart";
+  data: {
+    /** "bars" = horizontal bar chart per item. "grouped" = grouped bars by category. */
+    chartType: "bars" | "grouped";
+    title: string;
+    subtitle?: string;
+    /** Unit appended to values, e.g. "%" or "$" */
+    unit?: string;
+    /** For chartType "bars" */
+    items?: {
+      label: string;
+      value: number;
+      /** Normalisation ceiling — defaults to max value across items */
+      max?: number;
+      sublabel?: string;
+      /** Accent color key */
+      color?: "primary" | "emerald" | "amber" | "rose" | "violet" | "blue" | "muted";
+    }[];
+    /** For chartType "grouped" */
+    categories?: string[];
+    series?: {
+      name: string;
+      values: number[];
+      color?: "primary" | "emerald" | "amber" | "rose" | "violet";
+    }[];
+  };
+}
+
 export type ContentBlock =
   | TextBlock
   | HeadingBlock
@@ -59,7 +88,8 @@ export type ContentBlock =
   | MetricsBlock
   | ListBlock
   | DividerBlock
-  | DocsBlock;
+  | DocsBlock
+  | ChartBlock;
 
 export type BlockType = ContentBlock["type"];
 
@@ -73,6 +103,7 @@ export const BLOCK_META: Record<BlockType, { label: string; icon: string }> = {
   list: { label: "List", icon: "format_list_bulleted" },
   divider: { label: "Divider", icon: "horizontal_rule" },
   docs: { label: "Docs", icon: "picture_as_pdf" },
+  chart: { label: "Chart", icon: "show_chart" },
 };
 
 export function createEmptyBlock(type: BlockType): ContentBlock {
@@ -95,5 +126,7 @@ export function createEmptyBlock(type: BlockType): ContentBlock {
       return { type: "divider", data: {} as Record<string, never> };
     case "docs":
       return { type: "docs", data: { deckUrl: "", reportUrl: "", reportButtonText: "Download Report" } };
+    case "chart":
+      return { type: "chart", data: { chartType: "bars", title: "", items: [{ label: "", value: 0 }] } };
   }
 }

@@ -46,8 +46,17 @@ const LIVE_PROTOTYPES = [
     icon: "analytics",
     title: "Claude Code Coding Eval",
     description:
-      "25-task benchmark comparing Claude Sonnet 4.6, Haiku, and GPT-4o on real developer behaviors — bug fixing, ambiguity handling, and multi-step debugging.",
+      "25-task benchmark comparing Claude Haiku 4.5 and Sonnet 4.6 on real developer behaviors — bug fixing, ambiguity handling, and multi-step debugging.",
     href: "/ai-prototypes/coding-eval",
+    status: "live" as const,
+    cta: "try" as const,
+  },
+  {
+    icon: "hub",
+    title: "Agent-Gate: Agentic Eval",
+    description:
+      "10-task eval where Claude autonomously fixes broken codebases using tools in a loop. Measures cascade efficiency, self-correction rate, and cost vs capability tradeoffs.",
+    href: "/ai-prototypes/agentic-eval",
     status: "live" as const,
     cta: "try" as const,
   },
